@@ -1,0 +1,263 @@
+// BattleShip Pseudocode
+// This program is a one player game of battleship that generates a
+// board and places ships. Player has to guess ship position and
+// sink battleship.
+// PaceGroup1
+    // Alexander Bagtas
+    // Alysha Morgan
+    // Amonte Edwards
+    // Cameron Gallant
+    // Jennifer Xayyaraj
+// CSC 201
+// 12/06/21
+
+/**********Libraries**********/
+#include <iostream>         // Allow C++ to read input and display output
+#include <ctime>            // Allow C++ to manipulate date and time information
+#include <cstdlib>          // Allow C++ to generate random numbers
+#include <iomanip>          // Allow C++ to use setw
+using namespace std;        // Use C++ standard library
+
+const int MAX_SIZE = 10;
+struct BoardType {
+   int values[MAX_SIZE][MAX_SIZE];
+   int numCount;
+};
+
+/*********Prototypes**********/
+
+// Prints out 10 by 10 array of ocean waves ~
+// Post: Prints out 10 by 10 array of ~
+void PrintBoard(/*IN*/BoardType Board);
+
+// Assigns Carrier ship a coordinate
+// Pre: Board has been created and Carrier ship variables have been declared
+// Post: All Carrier ships are assigned a ROW and COL coordinate and carrier
+    // values are put into CarArray
+void PlaceCar(/*IN*/BoardType Board,/*OUT*/ int &coordinates,/*OUT*/ int &CAR1,
+                  /*OUT*/int &CAR2,/*OUT*/int &CAR3,/*OUT*/int &CAR4,/*OUT*/int &CAR6
+                  /*INOUT*/,int CarArray[]);
+
+// Assigns Submarine ship a coordinate
+// Pre: Board has been created and Submarine ship variables have been declared
+// Post: All Submarine ships are assigned a ROW and COL coordinate and submarine
+    // values are put into SubArray
+void PlaceSub(/*IN*/BoardType Board,/*OUT*/ int &coordinates,/*OUT*/int &SUB1
+              ,/*OUT*/int &SUB2,/*OUT*/int &SUB3, /*INOUT*/int SubArray[]);
+
+// Assigns Battalion ship a coordinate
+// Pre: Board has been created and Battalion ship variables have been declared
+// Post: All Battalion ships are assigned a ROW and COL coordinate battalion
+    // values are put into BatArray
+void PlaceBat(/*IN*/BoardType Board,/*OUT*/int &coordinates,/*OUT*/int &BAT1,
+              /*OUT*/int &BAT2,/*OUT*/int &BAT3,/*OUT*/int &BAT4, /*INOUT*/int BatArray[]);
+
+// Assigns Cruiser ship a coordinate
+// Pre: Board has been created and Cruiser ship variables have been declared
+// Post: All Cruiser ships are assigned a ROW and COL coordinate cruiser
+    // values are put into CruArray
+void PlaceCru(/*IN*/BoardType Board,/*OUT*/int &coordinates,
+              /*OUT*/int &CRU1,/*OUT*/int &CRU2,/*OUT*/int &CRU3,/*INOUT*/int CruArray[]);
+
+// Assigns Destroyer ship a coordinate
+// Pre: Board has been created and Destroyer ship variables have been declared
+// Post: All Destroyer ships are assigned a ROW and COL coordinate destroyer
+    // values are put into DesArray
+void PlaceDes(/*IN*/BoardType Board,/*OUT*/int &coordinates,
+              /*OUT*/int &DES1,/*OUT*/int &DES2, /*INOUT*/int DesArray[]);
+
+// Accepts an integer as a parameter and returns its first location in the array.
+// Pre: board array defined w/ COLs dimensions and coordinates contains a valid int
+    // Must have constant integer COLs declared
+// Post: If coordinates are equal to rowPos and colPos,
+    // set rowPos/colPos equal to current row/col.
+char FindShip(/*IN*/BoardType Board,/*OUT*/int &coordinates,
+                /*IN*/int rowGuess,/*IN*/int colGuess);
+
+// Prints battleship board with hits, misses, and ship location
+// Pre: All values are positive and all ship values have been assigned
+    // a coordinate.
+// Post: Displays board with ~, H, #, and .
+void PlayGame(/*IN*/int coordinates, /*IN*/char gameSymbol);
+
+/*************Main************/
+int main(){
+    // Initializes random number generator w/null pointer value
+    srand(time(nullptr));
+
+    // Declare Variables
+    BoardType Board;                         // Array with element size 10 by 10
+    int coordinates;                         // User guess
+    int rowPos,colPos;                       // Row position and column position
+    int rowGuess, colGuess;                  // User guess for row and column
+    char gameSymbol;                         // Holds value of 'H','#', or '.'
+
+    // Call to PrintBoard and inputs ~ into an array
+    // Call to PlaceShip and make random placements for ships
+        // Use random number generators to create coordinates
+
+    // Call to PlayGame which calls Findship
+        // and finds row and column location of coordinates
+        // Get user input for rowGuess and colGuess
+        // Loop until user guesses correctly
+        // while PlayGame displays board with gameSymbol value
+        // of 'H','#', or '.'
+
+
+    // Ends Program
+    return 0;
+
+}
+
+/**********Functions**********/
+
+// Prints out 10 by 10 array of ocean waves ~
+// Pre: Struct Board has been declared and array size is equal to
+    // MAX_SIZE
+// Post: Prints out 10 by 10 array of ~
+void PrintBoard(/*IN*/BoardType Board){
+
+    // Navigates rows of Board
+        //  Navigates columns of Board
+            // Outputs values of the battleship board
+}
+// Assigns Carrier ship a coordinate
+// Pre: Board has been created and Carrier ship variables have been declared
+// Post: All Carrier ships are assigned a ROW and COL coordinate and carrier
+    // values are put into CarArray
+void PlaceCar(/*IN*/BoardType Board,/*OUT*/ int &coordinates,/*OUT*/ int &CAR1,
+                  /*OUT*/int &CAR2,/*OUT*/int &CAR3,/*OUT*/int &CAR4,/*OUT*/int &CAR6,
+                  /*INOUT*/int CarArray[]){
+
+    // To be placed horizontally
+    // Generate random position for ships using random
+        // number generators
+        // for columns(int), use rand()%10+1
+        // for rows(char), use 65 + rand()%10
+    // Once a random position is found, if placed horizontally
+        // +1 to column part of coordinate
+        // if placed vertically, +1 to row part of coordinate
+    // Set coordinates equal to ship variable
+    // Store all ship values into CarArray and return
+
+
+}
+// Assigns Submarine ship a coordinate
+// Pre: Board has been created and Submarine ship variables have been declared
+// Post: All Submarine ships are assigned a ROW and COL coordinate and submarine
+    // values are put into SubArray
+void PlaceSub(/*IN*/BoardType Board,/*OUT*/ int &coordinates,/*OUT*/int &SUB1
+              ,/*OUT*/int &SUB2,/*OUT*/int &SUB3, /*INOUT*/int SubArray[]){
+
+    // To placed vertically
+    // Generate random position for ships using random
+        // number generators
+        // for columns(int), use rand()%10+1
+        // for rows(char), use 65 + rand()%10
+    // Once a random position is found, if placed horizontally
+        // +1 to column part of coordinate
+        // if placed vertically, +1 to row part of coordinate
+    // Set coordinates equal to ship variable
+}
+
+// Assigns Battalion ship a coordinate
+// Pre: Board has been created and Battalion ship variables have been declared
+// Post: All Battalion ships are assigned a ROW and COL coordinate battalion
+    // values are put into BatArray
+void PlaceBat(/*IN*/BoardType Board,/*OUT*/int &coordinates,/*OUT*/int &BAT1,
+              /*OUT*/int &BAT2,/*OUT*/int &BAT3,/*OUT*/int &BAT4, /*INOUT*/int BatArray[]){
+
+    // To be placed vertically
+    // Generate random position for ships using random
+        // number generators
+        // for columns(int), use rand()%10+1
+        // for rows(char), use 65 + rand()%10
+    // Once a random position is found, if placed horizontally
+        // +1 to column part of coordinate
+        // if placed vertically, +1 to row part of coordinate
+    // Set coordinates equal to ship variable
+
+}
+// Assigns Cruiser ship a coordinate
+// Pre: Board has been created and Cruiser ship variables have been declared
+// Post: All Cruiser ships are assigned a ROW and COL coordinate cruiser
+    // values are put into CruArray
+void PlaceCru(/*IN*/BoardType Board,/*OUT*/int &coordinates,
+              /*OUT*/int &CRU1,/*OUT*/int &CRU2,/*OUT*/int &CRU3,/*INOUT*/int CruArray[]){
+    // To be placed horizontally
+    // Generate random position for ships using random
+        // number generators
+        // for columns(int), use rand()%10+1
+        // for rows(char), use 65 + rand()%10
+    // Once a random position is found, if placed horizontally
+        // +1 to column part of coordinate
+        // if placed vertically, +1 to row part of coordinate
+    // Set coordinates equal to ship variable
+
+}
+// Assigns Destroyer ship a coordinate
+// Pre: Board has been created and Destroyer ship variables have been declared
+// Post: All Destroyer ships are assigned a ROW and COL coordinate destroyer
+    // values are put into DesArray
+void PlaceDes(/*IN*/BoardType Board,/*OUT*/int &coordinates,
+              /*OUT*/int &DES1,/*OUT*/int &DES2, /*INOUT*/int DesArray[]){
+    // To be placed vertically
+     // Generate random position for ships using random
+        // number generators
+        // for columns(int), use rand()%10+1
+        // for rows(char), use 65 + rand()%10
+    // Once a random position is found, if placed horizontally
+        // +1 to column part of coordinate
+        // if placed vertically, +1 to row part of coordinate
+    // Set coordinates equal to ship variable
+
+}
+
+// Accepts an integer as a parameter and returns its first location in the array.
+// Pre: board array defined w/ COLs dimensions and coordinates contains a valid int
+    // Must have constant integer COLs declared
+// Post: If coordinates are equal to rowPos and colPos,
+    // set rowPos/colPos equal to current row/col.
+char FindShip(/*IN*/BoardType Board,/*OUT*/int &coordinates,
+                /*IN*/int rowGuess,/*IN*/int colGuess){
+    // Declare variables
+    char gameSymbol;        // Holds value of 'H','#', or '.'
+
+    // Initializes numCount to MAX_SIZE
+
+    // Get user input for rowGuess and colGuess
+    // Loop through all ship coordinates and compare to user guess
+        // to check if they are equal
+    // For loop iterates through array
+        // Call PlaceCar
+    // For loop iterates through array
+        // Call PlaceDes
+    // For loop iterates through array
+        // Call PlaceSub
+    // For loop iterates through array
+        // Call PlaceBat
+    // For loop iterates through array
+        // Call PlaceCru
+
+    // If value has been found, set equal to 'H'
+    // else if , value has not been hit, set equal to '#'
+    // else, set equal to '.'
+
+    return 0;
+    // return gameSymbol;
+
+}
+
+// Prints battleship board with hits, misses, and ship location
+// Pre: All values are positive and all ship values have been assigned
+    // a coordinate.
+// Post: Displays board with ~, H, #, and .
+void PlayGame(/*IN*/int coordinates, /*IN*/char gameSymbol){
+
+    // Loop until battleships are hit
+    // Call PrintBoard after each correct guess
+    // Call FindShip to get values
+    // If all values of battleship values are 'H', end game
+        // and display board with ship location
+
+}
